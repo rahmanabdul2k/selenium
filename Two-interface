@@ -1,0 +1,32 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+import java.util.Scanner;
+
+public class twointerface {
+    public static void main(String[] args) {
+
+        Scanner two = new Scanner(System.in);
+        System.out.println("Enter the BrowserName");
+        String BrowserName = two.nextLine();
+//        String browser = "chrome";
+//        System.out.println(BrowserName);
+//        System.out.println(browser);
+//        System.out.println(BrowserName==browser);
+
+        String chrome = new String();
+        System.out.println(chrome);
+        if (BrowserName == chrome) {
+            System.setProperty("webdriver.chrome.driver", "C:\\Automation\\chromedriver_win32\\chromedriver.exe");
+            WebDriver driver = new ChromeDriver();
+
+            driver.get("https://www.google.com/");
+        } else {
+//            System.out.println("Test");
+            System.setProperty("webdriver.edge.driver", "C:\\Automation\\msedgedriver.exe");
+            WebDriver driver = new EdgeDriver();
+            driver.get("https://www.google.com/");
+        }
+    }
+}

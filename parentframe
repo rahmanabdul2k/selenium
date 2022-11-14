@@ -1,0 +1,31 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class parentframe {
+    public static void main(String[] args) throws Exception {
+
+
+        try {
+            System.setProperty("webdriver.chrome.driver", "C:\\Automation\\chromedriver_win32\\chromedriver.exe");
+            WebDriver driver = new ChromeDriver();
+
+            driver.get("https://letcode.in/frame");
+            WebElement myFrame = driver.findElement(By.xpath("//iframe[@src='frameUI']"));
+            driver.switchTo().frame(myFrame);
+            driver.findElement(By.name("fname")).sendKeys("Nithin");
+            driver.findElement(By.name("lname")).sendKeys("J");
+            driver.switchTo().frame(0);
+            driver.findElement(By.name("email")).sendKeys("email");
+            driver.switchTo().parentFrame();
+            driver.findElement(By.name("lname")).sendKeys("eeva");
+            driver.switchTo().defaultContent();
+
+
+        }
+        catch (Exception e) {
+            System.out.println("exp: " + e.getMessage());
+    }
+    }
+}

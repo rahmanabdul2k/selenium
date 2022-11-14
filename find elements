@@ -1,0 +1,17 @@
+import java.util.List;
+
+public class elements {
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("https://www.flipkart.com/");
+        List<WebElement> ab = driver.findElements(By.xpath("//*[@ class='xtXmba']"));
+        for (WebElement cd : ab) {
+            String ef = cd.getText();
+            System.out.println(ef);
+
+        }
+    }
+}

@@ -1,0 +1,14 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class redbus {
+    public static void main(String[] args) {
+        System.setProperty ("webdriver.chrome.driver", "C:\\Automation\\chromedriver_win32\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.redbus.in/bus-tickets/dindigul-to-chennai?fromCityName=Dindigul&fromCityId=229&toCityName=Chennai&toCityId=123&onward=11-Nov-2022&srcCountry=IND&destCountry=IND&opId=0&busType=Any");
+        WebElement view = driver.findElement(By.xpath("//div[@class='clearfix m-top-16']/child::div[text()='View Seats'][1]"));
+        view.click();
+    }
+}
